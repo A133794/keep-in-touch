@@ -1,0 +1,36 @@
+<mat-card-actions>
+    <span>Name<button
+        mat-stroked-button
+        >Delete Person</button></span>
+    
+    <table>
+        <thead>
+          <th>Date</th>
+          <th>Checked In?</th>
+          <th>Response?</th>
+          <th>Response Date</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>9/29/2020</td>
+            <td>
+                <button mat-button>
+          <mat-icon>radio_button_unchecked</mat-icon></button>
+            </td>
+            <td>
+                <button mat-button>
+                    <mat-icon>radio_button_unchecked</mat-icon></button>
+            </td>
+            <td>10/29/2020</td>
+            <td>
+                <button mat-button
+                  >Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <button
+    mat-stroked-button color="accent"
+    (click)=" returnHomePerson()">Return Home</button>
+</mat-card-actions>

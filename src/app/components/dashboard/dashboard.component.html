@@ -1,0 +1,27 @@
+<mat-card>
+<mat-card>
+    <mat-card-title>Actions</mat-card-title>
+    <mat-card-actions>
+      <button mat-raised-button
+              (click)="addPerson()"
+              color="primary">Add New Person</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>Your People</mat-card-title>
+    <button mat-raised-button
+              (click)="allPeople()"
+              color="primary">View All Your People</button>
+              <br/>
+              <button mat-raised-button
+              (click)="person()"
+              color="primary">Name</button>
+  </mat-card>
+  <mat-card>
+    <mat-card-title>Your Reminders</mat-card-title>
+    <button mat-raised-button
+              (click)="reminders()"
+              color="primary">View all reminders</button>
+             
+  </mat-card>
+</mat-card>

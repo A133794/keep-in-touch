@@ -1,0 +1,58 @@
+<form [formGroup]="form">
+    <div class="field-container">
+        <mat-form-field>
+          <mat-label>Enter the name of the person you want reminders for</mat-label>
+          <input matInput
+                 formControlName="name"
+                 placeholder="Name">
+          <mat-hint align="end">
+            <span *ngIf="name.errors?.required">This is required</span>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="field-container">
+        <mat-form-field>
+          <mat-label>Enter the method of contact</mat-label>
+          <input matInput
+                 formControlName="method"
+                 placeholder="Phone">
+          <mat-hint align="end">
+            <span *ngIf="method.errors?.required">This is required</span>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [formGroup]="form" [rangePicker]="picker">
+            <input matStartDate formControlName="start" placeholder="Start date">
+            <input matEndDate formControlName="end" placeholder="End date">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+        
+        
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Reoccurance</mat-label>
+          <mat-select formControlName="reoccurance">
+            <mat-option value="0">Never</mat-option>
+            <mat-option value="1">daily</mat-option>
+            <mat-option value="7">weekly</mat-option>
+            <mat-option value="14">bi-weekly</mat-option>
+    
+    
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-button
+                [disabled]="form.invalid"
+                (click)="submit()">Submit</button>
+        <button mat-button
+                (click)="cancel()">Cancel</button>
+      </div>
+      <p>Selected range: {{form.value | json}}</p>
+</form>
