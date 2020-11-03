@@ -19,7 +19,7 @@ export class PersonEntryComponent implements OnInit {
       method:['', [Validators.required]],
       startDate:[],
       endDate:[],
-      reoccurance:[],
+      reoccurrence:[],
       start:[],
       end:[]
     });

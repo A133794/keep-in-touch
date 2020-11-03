@@ -11,7 +11,7 @@ import { RemindersComponent } from '../reminders/reminders.component';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  
   constructor(private bottomSheet: MatBottomSheet) { }
 
   ngOnInit(): void {

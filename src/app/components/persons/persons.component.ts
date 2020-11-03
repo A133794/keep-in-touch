@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 @Component({
@@ -9,7 +9,7 @@ import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 export class PersonsComponent implements OnInit {
 
   constructor(private bottomSheetRef: MatBottomSheetRef<PersonsComponent>) { }
-
+  
   ngOnInit(): void {
     
   }
