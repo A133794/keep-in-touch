@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetConfig,MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { PeopleComponent } from '../people/people.component';
 import { PersonEntryComponent } from '../person-entry/person-entry.component';
-import { PersonsComponent } from '../persons/persons.component';
+import { PersonComponent } from '../person/person.component';
+
 import { RemindersComponent } from '../reminders/reminders.component';
 
 @Component({
@@ -37,7 +38,7 @@ export class DashboardComponent implements OnInit {
       disableClose: true,
       autoFocus: true
     };
-    this.bottomSheet.open(PersonsComponent, config);
+    this.bottomSheet.open(PersonComponent, config);
   }
   reminders():void{
     const config:MatBottomSheetConfig={

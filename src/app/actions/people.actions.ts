@@ -1,6 +1,6 @@
   
 import { createAction, props } from '@ngrx/store';
-import { PersonEntity } from '../resucers/people.reducer';
+import { PersonEntity } from '../reducers/person.reducer';
 
 
 

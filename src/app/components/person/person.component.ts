@@ -6,13 +6,13 @@ import { PersonListModel } from 'src/app/models/person';
 import { AppState, selectPersonDetails } from 'src/app/reducers/index';
 
 @Component({
-  selector: 'app-persons',
-  templateUrl: './persons.component.html',
-  styleUrls: ['./persons.component.css']
+  selector: 'app-person',
+  templateUrl: './person.component.html',
+  styleUrls: ['./person.component.css']
 })
-export class PersonsComponent implements OnInit {
+export class PersonComponent implements OnInit {
 people$:Observable<PersonListModel[]>;
-  constructor(private bottomSheetRef: MatBottomSheetRef<PersonsComponent>,private store: Store<AppState>) { }
+  constructor(private bottomSheetRef: MatBottomSheetRef<PersonComponent>,private store: Store<AppState>) { }
   
   ngOnInit(): void {
     this.people$=this.store.pipe(
@@ -21,4 +21,8 @@ people$:Observable<PersonListModel[]>;
 
     
   }
+  returnHomePerson(): void {
+    this.bottomSheetRef.dismiss();
+  }
+
 }

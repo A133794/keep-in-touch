@@ -1,0 +1,39 @@
+<mat-card-actions>
+    <div *ngFor="let people of people$ | async">
+      <div ><h4>{{people.Name}}  <button mat-stroked-button align="end">Delete Person</button></h4>
+        
+       
+      </div>
+      <table>
+          <thead>
+            <th>Date</th>
+            <th>Checked In?</th>
+            <th>Response?</th>
+            <th>Response Date</th>
+            <th></th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>9/29/2020</td>
+              <td>
+                  <button mat-button>
+            <mat-icon>radio_button_unchecked</mat-icon></button>
+              </td>
+              <td>
+                  <button mat-button>
+                      <mat-icon>radio_button_unchecked</mat-icon></button>
+              </td>
+              <td>10/29/2020</td>
+              <td>
+                  <button mat-button
+                    >Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      <button
+      mat-stroked-button color="accent"
+      (click)=" returnHomePerson()">Return Home</button>
+    </div>
+  </mat-card-actions>
+  

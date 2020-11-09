@@ -25,6 +25,10 @@ import { PeopleComponent } from './components/people/people.component';
 import { AllPeopleComponent } from './components/all-people/all-people.component';
 import { PersonsComponent } from './components/persons/persons.component';
 import { RemindersComponent } from './components/reminders/reminders.component';
+import{reducers} from './reducers';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { PersonComponent } from './components/person/person.component';
 
 
 const materialModules=
@@ -53,14 +57,17 @@ const materialModules=
     PeopleComponent,
     AllPeopleComponent,
     PersonsComponent,
-    RemindersComponent
+    RemindersComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ...materialModules,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [],
   bootstrap: [AppComponent]
