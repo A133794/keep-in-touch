@@ -15,7 +15,8 @@
               <br/>
               <button mat-raised-button
               (click)="person()"
-              color="primary">Name</button>
+              *ngFor="let people of people$ | async"
+              color="primary"> {{people.name}}</button>
   </mat-card>
   <mat-card>
     <mat-card-title>Your Reminders</mat-card-title>

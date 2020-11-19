@@ -11,7 +11,7 @@ import { AppState, selectPersonDetails } from 'src/app/reducers/index';
   styleUrls: ['./person.component.css']
 })
 export class PersonComponent implements OnInit {
-people$:Observable<PersonListModel[]>;
+@Input() people$:Observable<PersonListModel[]>;
   constructor(private bottomSheetRef: MatBottomSheetRef<PersonComponent>,private store: Store<AppState>) { }
   
   ngOnInit(): void {

@@ -22,11 +22,15 @@ export const selectPersonDetails = createSelector(
 
 );
 
-export const selectProjectList = createSelector(
+export const selectPeopleList = createSelector(
     selectAllPeopleEntities,
     (people)=>{
+        return people.map(people=>{
+
+        
         return{
             ...people
         } as PersonListItemModel;
+    });
     }
 )

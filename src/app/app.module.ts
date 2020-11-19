@@ -21,9 +21,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
-import { PeopleComponent } from './components/people/people.component';
 import { AllPeopleComponent } from './components/all-people/all-people.component';
-import { PersonsComponent } from './components/persons/persons.component';
+
 import { RemindersComponent } from './components/reminders/reminders.component';
 import{reducers} from './reducers';
 import { StoreModule } from '@ngrx/store';
@@ -54,9 +53,7 @@ const materialModules=
     AppComponent,
     PersonEntryComponent,
     DashboardComponent,
-    PeopleComponent,
     AllPeopleComponent,
-    PersonsComponent,
     RemindersComponent,
     PersonComponent
   ],

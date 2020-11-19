@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetConfig,MatBottomSheetModule } from '@angular/material/bottom-sheet';
-import { PeopleComponent } from '../people/people.component';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { PersonListItemModel } from 'src/app/models/person-list-item';
+import { AppState, selectPeopleList } from 'src/app/reducers';
+import { AllPeopleComponent } from '../all-people/all-people.component';
 import { PersonEntryComponent } from '../person-entry/person-entry.component';
 import { PersonComponent } from '../person/person.component';
 
@@ -12,10 +16,13 @@ import { RemindersComponent } from '../reminders/reminders.component';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  
-  constructor(private bottomSheet: MatBottomSheet) { }
+  people$:Observable<PersonListItemModel[]>;
+  constructor(private bottomSheet: MatBottomSheet,private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    this.people$=this.store.pipe(
+      select(selectPeopleList)
+    );
   }
 
   addPerson(): void {
@@ -31,12 +38,13 @@ export class DashboardComponent implements OnInit {
       disableClose: true,
       autoFocus: true
     };
-    this.bottomSheet.open(PeopleComponent, config);
+    this.bottomSheet.open(AllPeopleComponent, config);
   }
   person(): void {
     const config: MatBottomSheetConfig = {
       disableClose: true,
-      autoFocus: true
+      autoFocus: true, 
+      data:this.people$
     };
     this.bottomSheet.open(PersonComponent, config);
   }

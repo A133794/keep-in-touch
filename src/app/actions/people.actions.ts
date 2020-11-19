@@ -27,7 +27,7 @@ export const personAdd = createAction(
   
 interface PersonCreate {
     name: string;
-    methodOfContact?: string;
+    methodOfContact: string;
     startDate: Date;
     endDate: Date;
     reoccurrence:string
