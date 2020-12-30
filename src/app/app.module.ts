@@ -22,7 +22,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AllPeopleComponent } from './components/all-people/all-people.component';
-
+import {DateOrPipe} from './pipe/date-or';
 import { RemindersComponent } from './components/reminders/reminders.component';
 import{reducers} from './reducers';
 import { StoreModule } from '@ngrx/store';
@@ -55,7 +55,8 @@ const materialModules=
     DashboardComponent,
     AllPeopleComponent,
     RemindersComponent,
-    PersonComponent
+    PersonComponent,
+    DateOrPipe
   ],
   imports: [
     BrowserModule,

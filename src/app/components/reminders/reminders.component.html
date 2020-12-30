@@ -7,13 +7,13 @@
       <th></th>
     </thead>
     <tbody>
-      <tr>
-        <td>Sample Name 1</td>
+      <tr *ngFor="let people of people$ | async">
+        <td>{{people.name}}</td>
         <td>
-          SnapChat
+          {{people.methodOfContact}}
         </td>
         <td>
-          9/29/2020
+          {{people.nextContact| date:'shortDate' | dateOr:'No future contact dates'}}
         </td>
         <td><button mat-stroked-button>Complete</button></td>
         <td><button mat-stroked-button>Ignore</button></td>

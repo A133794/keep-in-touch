@@ -19,14 +19,14 @@ export class PersonEntryComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       name: ['', [Validators.required]],
-      method:['', [Validators.required]],
+      methodOfContact:['', [Validators.required]],
       startDate:['', [Validators.required]],
       endDate:['', [Validators.required]],
       reoccurrence:['', [Validators.required]],
     });
   }
   get name(): AbstractControl { return this.form.get('name'); }
-  get method(): AbstractControl { return this.form.get('method'); }
+  get methodOfContact(): AbstractControl { return this.form.get('methodOfContact'); }
   get startDate(): AbstractControl { return this.form.get('startDate'); }
   get endDate(): AbstractControl { return this.form.get('endDate'); }
   get reoccurrence(): AbstractControl { return this.form.get('reoccurrence'); }

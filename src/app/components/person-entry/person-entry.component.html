@@ -14,10 +14,10 @@
         <mat-form-field>
           <mat-label>Enter the method of contact</mat-label>
           <input matInput
-                 formControlName="method"
+                 formControlName="methodOfContact"
                  placeholder="Phone">
           <mat-hint align="end">
-            <span *ngIf="method.errors?.required">This is required</span>
+            <span *ngIf="methodOfContact.errors?.required">This is required</span>
           </mat-hint>
         </mat-form-field>
       </div>

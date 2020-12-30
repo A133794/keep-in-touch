@@ -13,9 +13,9 @@
           {{people.methodOfContact}}
         </td>
         <td>
-          {{people.lastContact}}
+          {{people.lastContact| date:'shortDate' | dateOr:'No last contact date'}}
         </td>
-        <td>{{people.nextContact}}</td>
+        <td>{{people.nextContact| date:'shortDate' | dateOr:'No next contact date'}}</td>
       </tr>
     </tbody>
   </table>
