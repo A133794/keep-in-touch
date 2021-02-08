@@ -1,6 +1,7 @@
 <mat-card-actions>
-    <div *ngFor="let people of people$ | async">
-      <div ><h4>{{people.name}}<button mat-stroked-button align="end">Delete Person</button></h4>
+    <div >
+      <div *ngFor="let people of people$ | async">
+      <div ><h4 >{{people.name}}<button mat-stroked-button align="end">Delete Person</button></h4>
         
        
       </div>
@@ -9,7 +10,6 @@
             <th>Date</th>
             <th>Checked In?</th>
             <th>Response?</th>
-            <th>Response Date</th>
             <th></th>
           </thead>
           <tbody>
@@ -23,7 +23,6 @@
                   <button mat-button>
                       <mat-icon>radio_button_unchecked</mat-icon></button>
               </td>
-              <td>10/29/2020</td>
               <td>
                   <button mat-button
                     >Edit</button>
@@ -34,6 +33,7 @@
       <button
       mat-stroked-button color="accent"
       (click)=" returnHomePerson()">Return Home</button>
+    </div>
     </div>
   </mat-card-actions>
   
